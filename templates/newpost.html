@@ -1,19 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Submit a new post</h1>
+<h1 class="header">Submit a new post</h1>
+
 <form action='/newpost' method='post'>
     <table>
         <tr>
-            <td><label for="newpost_title">Title</label></td>
+            <td><label for="newpost_title">Title for your new post:</label></td>
             <td>
-                <input name="newpost_title" type="text" value="" />
+                <input id='newpost_title' name="newpost_title" type="text" value="" />
             </td> 
         </tr>
         <tr>
-            <td><lable for="newpost">Your new blog</lable></td>
+            <td><lable for="newpost">Your new blog:</lable></td>
             <td>
-                <textarea name="newpost"></textarea>
+                <textarea id='newpost' name="newpost"></textarea>
                 <br /> 
                 <input type="submit" value="Add Entry" />
             </td>

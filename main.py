@@ -28,21 +28,26 @@ def newpost():
         db.session.add(new_entry)
         db.session.commit()
 
-        return redirect('/blog')
+        return redirect('/blog?id=' + str(new_entry.id))
 
     return render_template('newpost.html')  
 
 @app.route('/blog',methods=['POST','GET'])
 def blog():
-    blog_title = str(Blog.query.filter_by(title=title).all())
-    entry = str(Blog.query.filter_by(body=body).all())
     
-    return render_template('blog.html',blog_title=title,entry=entry)
+    entry_id = request.args.get("id")
+    if entry_id:
+        post = Blog.query.filter_by(id=int(entry_id)).first()
+        return render_template('entries.html',title=post.title, body=post.body)
+
+    blogs = Blog.query.all()   
+   
+    return render_template('blog.html',blogs=blogs)   
 
 
 @app.route("/")
 def index():
-    return render_template('base.html')
+    return redirect("/blog")
 
 if __name__ == '__main__':
     app.run()
