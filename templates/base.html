@@ -22,11 +22,26 @@
     </head>
 <body>
 
-    <div>
-        <a href="/blog">Main Blog Page</a>
-        &nbsp; &nbsp;
-        <a href="/newpost">Make a new post</a>
+    <div align='left'>
+        <a href="/">Home</a>
+        &nbsp; 
+        <a href="/blog">all posts</a>
+        &nbsp; 
+        <a href='/newpost'>new post</a>
     </div>
+    <div align='right'>
+        <a href='/login'>login</a>
+        &nbsp;
+        <a href='/logout'>logout</a>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        <ul>
+        {%  for category,message in messages %}
+        <li class="{{category}}">{{message}}</li>
+        {% endfor %}
+        </ul>
+    {%  endwith %}
 
     
 

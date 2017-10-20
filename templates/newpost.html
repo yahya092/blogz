@@ -1,26 +1,31 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="header">Submit a new post</h1>
+<h1>new post</h1>
 
 <form action='/newpost' method='post'>
     <table>
         <tr>
-            <td><label for="newpost_title">Title for your new post:</label></td>
             <td>
-                <input id='newpost_title' name="newpost_title" type="text" value="{{new_title}}" />
-                <br />
-                <span class='error'>{{title_error}}</span>
-            </td> 
+                <label>
+                    <div>Title:</div>
+                    <input name="newpost_title" type="text" value="{{new_title}}" />
+                    <br />
+                    <span class='error'>{{title_error}}</span>
+                </label>
+            </td>
+ 
         </tr>
         <tr>
-            <td><lable for="newpost">Your new blog:</lable></td>
             <td>
-                <textarea id='newpost' name="newpost">{{new_post}}</textarea>
-                <br />
-                <span class="error">{{body_error}}</span>
-                <br /> 
-                <input type="submit" value="Add Entry" />
+                <lable>
+                    <div>Post:</div>
+                    <textarea name="newpost">{{new_post}}</textarea>
+                    <br />
+                    <span class="error">{{body_error}}</span>
+                    <br /> 
+                    <input type="submit" value="Add Entry" />
+                </lable>
             </td>
         </tr>
     </table>

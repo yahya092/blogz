@@ -2,11 +2,11 @@
 
 {% block content %}
 
-<h1 class="header" >Build A Blog</h1>
+<h1>blog post!</h1>
 
 {% for blog in blogs %}
-    <h1><a href="/blog?id={{blog.id}}">{{blog.title}}</a></h1>
+    <h2><a href="/blog?id={{blog.id}}">{{blog.title}}</a></h2>
     <p class="text">{{blog.body}}</p>
-    <hr />
+    <p>written by {{blog.owner_id}}</p>
 {% endfor %}    
 {% endblock %}  

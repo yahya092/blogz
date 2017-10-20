@@ -7,7 +7,7 @@
 <form action='/login' method ='post'>
     <table>
         <tr>
-            <td><label for='username'>Username</label></td>
+            <td><label>Username</label></td>
             <td>
                 <input name="username" type="text" value="{{ username }}" />
             </td>
@@ -20,6 +20,9 @@
         </tr>
     </table>
     <input type="submit" value="Login">
+    
+<p>Don't Have an account? <a href="/signup">Create one!</a></p>
 </form>
+
 
 {% endblock %}
