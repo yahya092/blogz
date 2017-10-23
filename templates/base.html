@@ -1,8 +1,13 @@
 <!doctype html>
 <html>
     <head>
-        <title>{{title}}</title>
+        <title>Blogz</title>
         <style>
+            body{
+                padding-top: 10px;
+                padding-left: 150px;
+                padding-right: 150px;
+            }            
             .error{
                 color: red;
                 font-style: italic;
@@ -19,10 +24,12 @@
                 text-overflow: ellipsis
             }
             #nav{
-                text-align: left;
+                display: inline;
             }
             #user{
-                text-align: right;
+                display: inline;
+                float: right;
+                
             }
         </style>
     </head>
@@ -41,6 +48,7 @@
         <a href='/login'>login</a>
         &nbsp;
         <a href='/logout'>logout</a>
+
     </div>
     
     
