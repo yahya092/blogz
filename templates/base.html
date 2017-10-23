@@ -18,22 +18,32 @@
                 white-space: nowrap;
                 text-overflow: ellipsis
             }
+            #nav{
+                text-align: left;
+            }
+            #user{
+                text-align: right;
+            }
         </style>
     </head>
 <body>
 
-    <div align='left'>
+    <div id="nav" >
         <a href="/">Home</a>
         &nbsp; 
         <a href="/blog">all posts</a>
         &nbsp; 
         <a href='/newpost'>new post</a>
     </div>
-    <div align='right'>
+
+    
+    <div id="user">
         <a href='/login'>login</a>
         &nbsp;
         <a href='/logout'>logout</a>
     </div>
+    
+    
 
     {% with messages = get_flashed_messages(with_categories=True) %}
         <ul>

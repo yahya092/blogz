@@ -8,7 +8,7 @@
 
     <h2><a href="/blog?id={{blog.id}}">{{blog.title}}</a></h2>
     <p class="text">{{blog.body}}</p>
-    <p>written by <a href="{{blog.owner.username}}">{{blog.owner.username}}</a></p>
+    <p>written by <a href="blog?user={{blog.owner.username}}">{{blog.owner.username}}</a></p>
     
 
 {% endfor %}    
