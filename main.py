@@ -135,9 +135,15 @@ def blog():
         post = Blog.query.filter_by(id=int(entry_id)).first()
         return render_template('entries.html',title=post.title, body=post.body)
 
-    blogs = Blog.query.all()   
-    users = User.query.all()
-    return render_template('blog.html',blogs=blogs,users=users)   
+    username = request.args.get('user')
+    if username:
+        userobj = User.query.filter_by(username=username).first()
+        userid = userobj.id
+        blogs = Blog.query.filter_by(owner_id=userid)
+        return render_template("user_entries.html",blogs=blogs)
+    else:
+        blogs = Blog.query.all()    
+    return render_template('blog.html',blogs=blogs)   
 
 
 @app.route("/")
