@@ -136,15 +136,15 @@ def blog():
         return render_template('entries.html',title=post.title, body=post.body)
 
     blogs = Blog.query.all()   
-    
-    user_id = request.args.get('?user=user.id')
-    return render_template('blog.html',blogs=blogs)   
+    users = User.query.all()
+    return render_template('blog.html',blogs=blogs,users=users)   
 
 
 @app.route("/")
 def index():
     
     users = User.query.all()
+   
     return render_template('index.html',users=users)
 
 if __name__ == '__main__':

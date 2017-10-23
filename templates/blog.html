@@ -5,8 +5,15 @@
 <h1>blog post!</h1>
 
 {% for blog in blogs %}
+
     <h2><a href="/blog?id={{blog.id}}">{{blog.title}}</a></h2>
     <p class="text">{{blog.body}}</p>
-    <p>written by {{blog.owner_id}}</p>
+
+    {% for user in users %}
+    <p>written by <a href="{{user.username}}">{{user.username}}</a></p>
+    
+    {% endfor %}
+
 {% endfor %}    
+
 {% endblock %}  
